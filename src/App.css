@@ -5,14 +5,26 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Indie Flower", cursive;
+  color: #fff;
 }
-
+button {
+  background: #2a9d8f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: black;
+  font-size: 20px;
+}
+strong {
+  color: #e78f51;
+  font-size: 30px;
+}
 .game {
   background: #202024;
   width: 100%;
   height: 100vh;
   text-align: center;
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,11 +35,11 @@
   display: flex;
   width: 330px;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 50px;
 }
 
 .boardSquare {
-  background: #246456;
+  background: #353536;
   width: 100px;
   height: 100px;
   display: flex;
@@ -37,4 +49,11 @@
   font-size: 70px;
   font-weight: bold;
   border-radius: 5px;
+  cursor: pointer;
+}
+.boardSquare.O {
+  background: #2a9d8f;
+}
+.boardSquare.X {
+  background: #e78f51;
 }
