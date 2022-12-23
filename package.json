@@ -1,8 +1,8 @@
 {
-  "name": "react-typescript",
+  "name": "jogo-da-velha",
   "version": "1.0.0",
   "type": "module",
-  "description": "React TypeScript on Replit, using Vite bundler",
+  "description": "Jogo da Velha com React TypeScript usando Vite",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
