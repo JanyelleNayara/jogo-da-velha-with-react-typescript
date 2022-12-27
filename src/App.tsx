@@ -18,7 +18,7 @@ export default function App() {
     if (marks[index] || gameOver) {
       return;
     }
-    
+
     setMarks((prev) => ({ ...prev, [index]: turn }));
     setTurn((prev) => (prev === "O" ? "X" : "O"));
   };
@@ -74,18 +74,38 @@ export default function App() {
 
   return (
     <div className="game">
+      
+      <div className="select-player">
+        <h1>Jogo da Velha</h1>
+        <h3>Com qual você quer começar?</h3>
+        <div className="button-select">
+          <button className="buttonX">Jogador X</button>
+          <button className="buttonO">Jogador O</button>
+        </div>
+      </div>
+      <div className="game-box">
       {winner && <h2>O jogador <strong>{winner}</strong> ganhou</h2>}
       {draw && <h2> Empate!</h2>}
+        <div className="board">
+          {getSquares().map((_, index) => (
+            <div className={`boardSquare ${getSquarePlayer(index)}`} onClick={() => play(index)}>
+              {marks[index]}
+            </div>
+          ))}
+        </div>
+        {!gameOver && <p>É a vez do jogador <strong>{turn}</strong></p>}
+        {gameOver && <button onClick={reset}>Jogar novamente</button>}
 
-      <div className="board">
-        {getSquares().map((_, index) => (
-          <div className={`boardSquare ${getSquarePlayer(index)}`} onClick={() => play(index)}>
-            {marks[index]}
-          </div>
-        ))}
       </div>
-      {!gameOver && <p>É a vez do jogador <strong>{turn}</strong></p>}
-      {gameOver && <button onClick={reset}>Jogar novamente</button>}
+      
+      <div className="game-result">
+
+        {/*<p>Jogar com o computador <input type='checkbox' checked/></p>*/}
+        {winner && <h2>O jogador <strong>{winner}</strong> ganhou</h2>}
+        {draw && <h2> Empate!</h2>}
+        {gameOver && <button onClick={reset}>Jogar novamente</button>}
+      </div>
+      
     </div>
   );
 }

@@ -20,7 +20,44 @@ strong {
   color: #e78f51;
   font-size: 30px;
 }
-.game {
+.select-player {
+  display: none;
+  position: absolute;
+  background: #202024;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+/*   display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  max-width: 330px;
+}
+.select-player h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.select-player h3 {
+  margin: 10px 10px 30px 10px;
+  font-weigth: normal;
+  font-size: 25px;
+}
+.select-player button {
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: black;
+  font-size: 20px;
+}
+.select-player button .playerX {
+  margin-right: 5px;
+}
+.select-player button .playerY {
+  margin-left: 5px;
+}
+.game-box {
   background: #202024;
   width: 100%;
   height: 100vh;
